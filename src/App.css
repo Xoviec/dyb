@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,63 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+li button{
+  position: relative;
+}
+li button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FF3B77;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+li button:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+.dupa::after{
+  content: '';
+  position: absolute;
+  background-image: url(images/dupa.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 60%;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  opacity: 0.2;
+}
+
+.dupa2::after{
+  content: '';
+  position: absolute;
+  background-image: url(images/dupa1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  opacity: 0.1;
+}
+
+.text-gradient{
+  background: linear-gradient(224deg, #00aff0, #FF3B77);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dupsko{
+  backdrop-filter: blur(3px);
 }
